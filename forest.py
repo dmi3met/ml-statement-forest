@@ -22,6 +22,6 @@ for n_esti in range(1,51):
         y_train, y_test = y[train_index], y[test_index]
         clf.fit(X_train, y_train)
         score += r2_score(y_test, clf.predict(X_test))
-    score = score / splits
+    score = round(score / splits, 2)
     if score > 0.52:
         print(n_esti, score)
